@@ -1,0 +1,16 @@
+[
+  {
+    "id": "theme-night#1",
+    "title": "Anime Themed Night ",
+    "theme": "Anime Theme TBD",
+    "price": 45,
+    "currency": "USD",
+    "dateDisplay": "Date TBD",
+    "dateISO": null,
+    "emoji": "🌙",
+    "gradient": { "from": "pink-800", "to": "purple-900" },
+    "features": [ "Easy for beginners", "Free cat ears headband" ],
+    "ctaLabel": "View Event on Eventbrite",
+    "bookingArg": "Sailor Moonlit Night"
+  }
+]

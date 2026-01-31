@@ -1,0 +1,46 @@
+[
+  {
+    "id": "alcoholic-beverages",
+    "title": "Cocktails",
+    "icon": "wine",
+    "items": [
+      {
+        "name": "Titan's Tonic",
+        "description": "Gin, Blue Curacaogawgwagaw, Steam (Dry Ice)",
+        "price": 12
+      },
+      {
+        "name": "Pink Mana Potion",
+        "description": "Strawberry Soju, Calpico, Glitter",
+        "price": 10
+      },
+      {
+        "name": "Super Saiyan Sour",
+        "description": "Whiskey, Lemon, Spiked Gold Sugar",
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "Non-alcoholic-beverages",
+    "title": "Mocktails",
+    "icon": "wine",
+    "items": [
+      {
+        "name": "Bubu Bubble Tea",
+        "description": "bubuuuuus bubble teaeaeaeaeaeae",
+        "price": 9
+      },
+      {
+        "name": "Bento Box Nachos",
+        "description": "Wonton chips, spicy tuna, nori",
+        "price": 14
+      },
+      {
+        "name": "Mochi Flight",
+        "description": "Matcha, Mango, Black Sesame",
+        "price": 8
+      }
+    ]
+  }
+]

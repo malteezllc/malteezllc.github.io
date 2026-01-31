@@ -1,0 +1,103 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+	background: #8b5cf6;
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #ec4899;
+}
+
+/* Neon Text Effect */
+.neon-text {
+	text-shadow: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Glassmorphism */
+.glass {
+	background: rgba(15, 23, 42, 0.7);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+	background: rgba(30, 41, 59, 0.6);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Paint Splatter Background Pattern */
+.bg-pattern {
+	background-color: #0f172a;
+	background-image: radial-gradient(#1e293b 1px, transparent 1px);
+	background-size: 20px 20px;
+}
+
+
+
+
+.canvas-frame {
+	position: relative;
+	z-index: 5; /* above legs */
+	width: min(100%, 700px);
+	/* make canvas a bit smaller: subtract ~150px from previous size with a safe minimum */
+	height: max(200px, calc(min(1000px, 60vh) - 150px));
+	background: #fff;
+	border: 18px solid #8b5a2b; /* wooden stretcher/frame */
+	border-radius: 6px;
+	box-shadow: 0 18px 40px rgba(0,0,0,0.45), inset 0 2px 0 rgba(255,255,255,0.06);
+	overflow: hidden;
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+}
+
+.art-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #fafafa;
+	/* subtle linen texture using gradients */
+	background-image:
+		linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
+		linear-gradient(180deg, rgba(0,0,0,0.015) 1px, transparent 1px);
+	background-size: 6px 6px, 6px 6px;
+	cursor: crosshair;
+}
+
+.canvas-hint {
+	position: absolute;
+	right: 12px;
+	bottom: 10px;
+	font-size: 0.65rem;
+	color: #6b7280;
+	pointer-events: none;
+	z-index: 10;
+}
+
+/* Smaller frame on narrow screens */
+@media (max-width: 640px) {
+	.canvas-frame { border-width: 12px; height: max(180px, calc(min(700px, 70vh) - 150px)); }
+	.easel::before, .easel::after { height: 140%; width: 10px; }
+}
+
+/* Center lone event card */
+#eventsGrid > :only-child {
+	grid-column: 1 / -1;
+	justify-self: center;
+	max-width: 760px;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	#eventsGrid > :only-child {
+		max-width: 560px;
+	}
+}
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Anime Paint & Sip!</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Bangers', 'cursive'],
+                    },
+                    colors: {
+                        anime: {
+                            dark: '#0f172a',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            cyan: '#06b6d4',
+                            yellow: '#fbbf24'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px #8b5cf6' },
+                            '50%': { opacity: .5, boxShadow: '0 0 10px #ec4899' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-anime-dark text-white font-sans antialiased overflow-x-hidden selection:bg-anime-pink selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="palette" class="w-8 h-8 text-anime-pink group-hover:rotate-12 transition-transform"></i>
+                    <span class="font-display text-2xl tracking-wider text-white neon-text">NYC ANIME PAINT & SIP</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#events" class="hover:text-anime-cyan transition-colors px-3 py-2 rounded-md text-sm font-medium">Events</a>
+                        <a href="#menu" class="hover:text-anime-cyan transition-colors px-3 py-2 rounded-md text-sm font-medium">Menu</a>
+                        <a href="#booking" class="bg-gradient-to-r from-anime-purple to-anime-pink hover:from-anime-pink hover:to-anime-purple text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-anime-purple/30">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div class="md:hidden hidden bg-slate-900 border-b border-gray-800 absolute w-full" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#events" onclick="toggleMenu()" class="text-gray-300 hover:text-anime-cyan block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="#menu" onclick="toggleMenu()" class="text-gray-300 hover:text-anime-cyan block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="#booking" onclick="toggleMenu()" class="text-anime-pink font-bold block px-3 py-2 rounded-md text-base">Book a Seat</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-pattern">
+        <!-- Abstract Shapes -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-anime-purple rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-anime-pink rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style="animation-delay: 2s"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-transparent to-anime-dark z-10"></div>
+
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-anime-cyan/30 bg-anime-cyan/10 text-anime-cyan text-sm font-bold tracking-widest uppercase">
+                NYC Anime Paint & Sip
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display mb-6 tracking-wide leading-tight">
+                Paint Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-anime-pink to-anime-yellow">Waifu</span><br>
+                Sip Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-anime-cyan to-anime-purple">Sake</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                The ultimate anime night out! <br> Experience your first ever anime themed painting session with us. 
+                anime music and custom anime-inspired drinks.
+                <br> 
+                No experience needed — just good vibes!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#events" class="px-8 py-4 bg-white text-anime-dark font-bold rounded-full hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="calendar"></i> View Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Upcoming Events -->
+    <section id="events" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display mb-4">Upcoming <span class="text-anime-cyan">Arcs</span></h2>
+                <p class="text-gray-400">Choose your adventure. All supplies included.</p>
+            </div>
+
+            <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- event cards injected here by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-pattern relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-display text-center mb-12">Drink Menu</h2>
+            
+            <div id="menuGrid" class="grid md:grid-cols-2 gap-8"><!-- menu injected here --></div>
+        </div>
+    </section>
+
+    <!-- Digital Canvas (controls + easel) -->
+    <section id="try-it" class="py-20 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-12">
+                <div>
+                    <h2 class="text-4xl font-display mb-6 text-white"><span class="text-anime-yellow">Practice</span> Your Strokes</h2>
+                    <p class="text-gray-400 mb-6">Before you grab a real brush, try our digital doodle board. Create a masterpiece right here!</p>
+
+                    <div class="flex gap-4 mb-6">
+                        <button onclick="changeColor('#ec4899')" class="w-10 h-10 rounded-full bg-anime-pink hover:scale-110 transition-transform ring-2 ring-white/20" aria-label="Pink"></button>
+                        <button onclick="changeColor('#06b6d4')" class="w-10 h-10 rounded-full bg-anime-cyan hover:scale-110 transition-transform ring-2 ring-white/20" aria-label="Cyan"></button>
+                        <button onclick="changeColor('#8b5cf6')" class="w-10 h-10 rounded-full bg-anime-purple hover:scale-110 transition-transform ring-2 ring-white/20" aria-label="Purple"></button>
+                        <button onclick="changeColor('#fbbf24')" class="w-10 h-10 rounded-full bg-anime-yellow hover:scale-110 transition-transform ring-2 ring-white/20" aria-label="Yellow"></button>
+                        <button onclick="clearCanvas()" class="ml-auto px-4 py-2 text-sm text-gray-400 hover:text-white border border-gray-700 rounded-lg">Clear</button>
+                    </div>
+
+                    <div class="relative w-full flex items-center justify-center py-6">
+                        <div class="easel">
+                            <div class="canvas-frame">
+                                <canvas id="paintCanvas" class="art-canvas"></canvas>
+                                <div class="canvas-hint">Draw here!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canvas Feature Cards (separate section) -->
+    <section id="try-it-cards" class="py-12 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="p-3 bg-anime-pink/20 rounded-lg text-anime-pink">
+                            <i data-lucide="music"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Anime OSTs and Songs</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Music will always match the theme of the event! Chainsaw Man openings for a Pochita art session!</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="p-3 bg-anime-cyan/20 rounded-lg text-anime-cyan">
+                            <i data-lucide="shirt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">All Supplies Included</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Come in with nothing but a willingness to create. All materials and tools are provided!</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="p-3 bg-anime-purple/20 rounded-lg text-anime-purple">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Instructor Led</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">No drawing skills? No problem. we provide a pre-sketched canvas as well as step-by-step guidance from our experienced instructors.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Quick Events CTA (right-aligned above footer) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex justify-center">
+            <a href="#events" class="px-8 py-4 bg-white text-anime-dark font-bold rounded-full hover:bg-gray-100 transition-all flex items-center justify-center gap-2" aria-label="View Events">
+                <i data-lucide="calendar"></i> View Events
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <span class="font-display text-2xl tracking-wider text-white">Anime Paint & Sip 🖌️</span>
+                <p class="text-gray-500 text-sm mt-2">A Pop up business delivering the best anime-themed experiences. <br>Based in New York City</p>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="https://www.instagram.com/nycanimepaintandsip/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-anime-pink hover:text-white transition-colors">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@nycanimepaintandsip" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-anime-cyan hover:text-white transition-colors">
+                    <img src="assets/icons/tiktok.svg" alt="TikTok" class="w-5 h-5" />
+                </a>
+                <a href="https://www.eventbrite.com/o/malteez-nyc-anime-paint-sip-120877481547" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-anime-purple hover:text-white transition-colors">
+                    <img src="assets/icons/eventbrite.svg" alt="Eventbrite" class="w-5 h-5" />
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-gray-700 text-xs">
+            © 2026 Malteez LLC. Made with <span class="text-red-500">♥</span> for Anime fans.
+        </div>
+    </footer>
+
+    
+
+    <script src="script.js" defer></script>
+</body>
+</html>
